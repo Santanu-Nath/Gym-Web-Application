@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nutrition & Supplement Bar | Powerfit Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #fffdf7;
+      }
+      .hero {
+        background: url("{% static 'images/nutrition-hero.jpg' %}") center
+          center/cover no-repeat;
+        height: 80vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .feature-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+      }
+      .icon-img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+      .stats {
+        background: #ff9800;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .cta {
+        background: #e65100;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .btn-primary {
+        background-color: #ffb74d;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #ffa726;
+      }
+      footer {
+        background-color: #bf360c;
+        color: #ccc;
+        padding: 30px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="#">Powerfit Gym</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'fitnessTracking' %}"
+              >FitnessTracking</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="display-3">Nutrition & Supplement Bar</h1>
+        <p class="lead">Fuel your workout. Feed your goals.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section container">
+      <h2 class="text-center mb-5">Smart Nutrition On Site</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-smoothie.png' %}"
+              alt="Smoothies"
+              class="icon-img"
+            />
+            <h5>Post-Workout Smoothies</h5>
+            <p>
+              Custom protein shakes and fruit blends crafted to help you refuel,
+              rebuild, and rehydrate.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-supplement.png' %}"
+              alt="Supplements"
+              class="icon-img"
+            />
+            <h5>Clean Supplements</h5>
+            <p>
+              Whey, creatine, electrolytes, and more — sourced from trusted
+              brands and available on-site.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-snacks.png' %}"
+              alt="Snacks"
+              class="icon-img"
+            />
+            <h5>Healthy Grab-&-Go</h5>
+            <p>
+              Fuel your day with protein bars, oats, energy bites, and low-carb
+              snack options.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container">
+        <h2>Nutrition that Powers Performance</h2>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <h3>500+</h3>
+            <p>Smoothies Blended Monthly</p>
+          </div>
+          <div class="col-md-4">
+            <h3>100%</h3>
+            <p>Natural Ingredient Policy</p>
+          </div>
+          <div class="col-md-4">
+            <h3>7 Days</h3>
+            <p>Open All Week Post-Workout</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <h2>Recover. Rehydrate. Rebuild.</h2>
+        <p class="lead">
+          Visit our in-house bar to energize before and after your training
+          sessions.
+        </p>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3"
+          >View Nutrition Menu</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Powerfit Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

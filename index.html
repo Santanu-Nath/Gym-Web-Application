@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>PowerfitGym</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div
+        class="container d-flex align-items-center justify-content-lg-between"
+      >
+        <h1 class="logo me-auto me-lg-0">
+          <a href="/">POWERFIT GYM<span>.</span></a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto active" href="/">Home</a></li>
+            <li><a class="nav-link scrollto" href="/about">About</a></li>
+            <li><a class="nav-link scrollto" href="/services">Services</a></li>
+            <li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+            <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Memberships</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="/join">Enroll</a></li>
+
+                <li><a href="#">Workouts</a></li>
+
+                <li><a href="/profile">View Profile</a></li>
+              </ul>
+            </li>
+
+            {% if not request.user.is_authenticated %}
+
+            <li><a class="nav-link scrollto" href="/signup">Signin</a></li>
+            {% else %}
+            <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+
+            {% endif %}
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+        {% if request.user.is_authenticated %}
+        <a href="/welcome" class="get-started-btn scrollto">Welcome</a>
+        {% endif %}
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+      <div class="container" data-aos="fade-up">
+        <div
+          class="row justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <div class="col-xl-6 col-lg-8">
+            <h1>Start Now Stop Never <span>.</span></h1>
+            <h2>Join PowerfitGym</h2>
+          </div>
+        </div>
+
+        <div
+          class="row gy-4 mt-5 justify-content-center"
+          data-aos="zoom-in"
+          data-aos-delay="250"
+        >
+          <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line"></i>
+              <h3><a href="biceps_triceps">Biceps | Triceps</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line"></i>
+              <h3><a href="back-exercises">Back</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line"></i>
+              <h3><a href="shoulder-exercises">Shoulders</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+              <i class="ri-paint-brush-line"></i>
+              <h3><a href="chest-exercises">Chest</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+              <i class="ri-database-2-line"></i>
+              <h3><a href="leg-exercises">Legs</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= Features Section ======= -->
+      <section id="features" class="features">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div
+              class="image col-lg-6"
+              style="background-image: url('static/assets/img/features.jpg')"
+              data-aos="fade-right"
+            ></div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              <div
+                class="icon-box mt-5 mt-lg-0"
+                data-aos="zoom-in"
+                data-aos-delay="150"
+              >
+                <i class="bx bx-receipt"></i>
+                <h4>
+                  <a href="trainsamrter">Train Smarter. Achieve Faster.</a>
+                </h4>
+                <p>
+                  Train smarter, achieve faster—join our expert-led workouts
+                  infused with energy and community. Get personalized coaching,
+                  real accountability, and transformative results in half the
+                  time. Step into your best self, surrounded by support and
+                  motivation every rep, sprint, and stretch. Your fitness
+                  breakthrough starts right here.
+                </p>
+              </div>
+              <div
+                class="icon-box mt-5"
+                data-aos="zoom-in"
+                data-aos-delay="150"
+              >
+                <i class="bx bx-cube-alt"></i>
+                <h4><a href="seegymaction">See the Gym in Action</a></h4>
+                <p>
+                  See the gym in action—real coaches, real workouts, real
+                  results. Watch our classes, feel the energy, and picture
+                  yourself pushing limits alongside a supportive community. No
+                  staged photos—just authentic footage showing how our workouts
+                  inspire confidence, strength, and transformation. Your best
+                  self is waiting.
+                </p>
+              </div>
+              <div
+                class="icon-box mt-5"
+                data-aos="zoom-in"
+                data-aos-delay="150"
+              >
+                <i class="bx bx-images"></i>
+                <h4>
+                  <a href="classpricing">Classes & Pricing You’ll Love</a>
+                </h4>
+                <p>
+                  Explore a variety of energizing classes—from beginner yoga to
+                  high‑intensity HIIT—all at transparent, budget‑friendly
+                  prices. No hidden fees or surprises. Choose the ideal plan for
+                  your fitness goals and lifestyle, with flexible options and
+                  clear comparisons, so you can decide confidently and jump into
+                  a class you’ll love.
+                </p>
+              </div>
+              <div
+                class="icon-box mt-5"
+                data-aos="zoom-in"
+                data-aos-delay="150"
+              >
+                <i class="bx bx-shield"></i>
+                <h4><a href="hearfrommembers">Hear from Our Members</a></h4>
+                <p>
+                  Hear from our members—real stories of transformation,
+                  strength, and renewed confidence. Discover how our expert
+                  coaches and supportive community helped individuals overcome
+                  challenges, reach milestones, and sustain lasting fitness
+                  success. Authentic voices, specific results, and genuine
+                  experiences that inspire and reassure—take their word and see
+                  your potential next.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Features Section -->
+
+      <!-- ======= Clients Section ======= -->
+      <section id="clients" class="clients">
+        <div class="container" data-aos="zoom-in">
+          <div class="clients-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-1.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-2.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-3.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-4.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-5.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-6.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-7.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/assets/img/clients/client-8.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- End Clients Section -->
+
+      <!-- ======= Cta Section ======= -->
+      <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+          <div class="text-center">
+            <h3>Start Your Journey</h3>
+            <p>
+              Ready to transform your fitness journey? Join our community today
+              and experience expert coaching, dynamic classes, and a supportive
+              environment that empowers you to achieve your goals. Whether
+              you're aiming to build strength, improve endurance, or embrace a
+              healthier lifestyle, we have the resources and motivation to help
+              you succeed. Don’t wait—your best self is just a step away. Sign
+              up now and take the first step towards a stronger, healthier you!
+            </p>
+            <a class="cta-btn" href="/signup">Call To Action</a>
+          </div>
+        </div>
+      </section>
+      <!-- End Cta Section -->
+    </main>
+    <!-- End #main -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="static/assets/vendor/aos/aos.js"></script>
+    <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="static/assets/js/main.js"></script>
+  </body>
+</html>

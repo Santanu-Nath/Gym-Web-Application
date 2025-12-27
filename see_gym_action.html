@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>See the Gym in Action | Powerfit Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
+      .hero {
+        background: url("{% static 'images/gym-action-hero.jpg' %}") center
+          center/cover no-repeat;
+        height: 90vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .gallery img {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+      .features,
+      .testimonials,
+      .cta {
+        padding: 80px 0;
+      }
+      .testimonial {
+        font-style: italic;
+      }
+      .footer {
+        background-color: #111;
+        color: #ccc;
+        padding: 40px 0;
+        text-align: center;
+      }
+      h2 {
+        font-weight: 700;
+      }
+      .btn-primary {
+        background-color: #ff3c00;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #e03100;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="#">Powerfit Gym</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'classpricing' %}">ClassPricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="display-3">See the Gym in Action</h1>
+        <p class="lead">
+          Experience the energy, dedication, and results at Powerfit Gym.
+        </p>
+        <a href="gallery" class="btn btn-primary btn-lg mt-3">Explore Now</a>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container gallery py-5">
+      <h2 class="text-center mb-5">Gallery & Videos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="{% static 'images/action1.jpg' %}" alt="Weightlifting" />
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/action2.jpg' %}" alt="Cardio Session" />
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/action3.jpg' %}" alt="Yoga Class" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features bg-light text-center">
+      <div class="container">
+        <h2>Why You'll Love Training Here</h2>
+        <p class="lead mb-5">
+          See what makes Gym Pro the perfect place for your fitness journey.
+        </p>
+        <div class="row">
+          <div class="col-md-4">
+            <h4>State-of-the-Art Equipment</h4>
+            <p>
+              Only the best machines, weights, and gear to maximize your
+              workouts.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h4>Expert Coaches & Trainers</h4>
+            <p>
+              Certified professionals dedicated to your progress and safety.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h4>Community & Motivation</h4>
+            <p>A welcoming environment where everyone supports each other.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center">
+      <div class="container">
+        <h2>Member Success Stories</h2>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <blockquote class="testimonial">
+              “Joining Gym Pro was the best decision I've made. The atmosphere
+              and trainers are amazing!”
+            </blockquote>
+            <p>- Mike T.</p>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testimonial">
+              “I’ve seen incredible results thanks to the tailored programs and
+              support here.”
+            </blockquote>
+            <p>- Lisa W.</p>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testimonial">
+              “The community motivates me every day. I love being part of Gym
+              Pro!”
+            </blockquote>
+            <p>- Daniel R.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta text-center text-white" style="background: #ff3c00">
+      <div class="container py-5">
+        <h2>Ready to Experience the Energy?</h2>
+        <p class="lead">
+          Sign up today and take the first step towards your fitness goals.
+        </p>
+        <a href="signup" class="btn btn-light btn-lg mt-3">Get Started Now</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Powerfit Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

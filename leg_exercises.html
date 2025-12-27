@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leg Exercises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #2e7d32;
+        --light-color: #a5d6a7;
+        --bg-color: #f8f9fa;
+        --card-bg: #ffffff;
+        --shadow-color: rgba(46, 125, 50, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--bg-color);
+        color: #333;
+      }
+
+      header {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 70px 20px 50px;
+        box-shadow: 0 6px 20px var(--shadow-color);
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1500&q=80")
+            center/cover no-repeat;
+        z-index: -1;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+      }
+
+      header p {
+        font-size: 1.2rem;
+        color: #c8e6c9;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 40px auto 60px;
+        padding: 0 20px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        border-bottom: 3px solid var(--light-color);
+        padding-bottom: 10px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px var(--shadow-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h3 {
+        font-size: 18px;
+        color: var(--primary-color);
+      }
+
+      .btn-home {
+        display: block;
+        width: fit-content;
+        margin: 40px auto 0;
+        padding: 14px 28px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-home:hover {
+        background-color: #388e3c;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.2rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .btn-home {
+          padding: 12px 24px;
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Leg Exercises</h1>
+      <p>Build lower body strength with these powerful leg workouts</p>
+    </header>
+
+    <div class="container">
+      <h2>Top Leg Exercises</h2>
+      <div class="grid">
+        {% for exercise in leg_exercises %}
+        <div class="card">
+          <h3>{{ exercise }}</h3>
+        </div>
+        {% endfor %}
+      </div>
+
+      <a href="{% url 'Home' %}" class="btn-home">⬅ Return to Home</a>
+    </div>
+  </body>
+</html>

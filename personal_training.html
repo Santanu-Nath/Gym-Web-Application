@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personal Training | Powerfit Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4fdfd;
+      }
+      .hero {
+        background: url("{% static 'images/personal-training-hero.jpg' %}")
+          center center/cover no-repeat;
+        height: 80vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .feature-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+      }
+      .icon-img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+      .stats {
+        background: #008080;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .cta {
+        background: #004d4d;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .btn-primary {
+        background-color: #00bfa5;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #009e86;
+      }
+      footer {
+        background-color: #002d2d;
+        color: #ccc;
+        padding: 30px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="#">Powerfit Gym</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'groupFitnessClasses' %}"
+              >GroupFitnessClasses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="display-3">One-on-One Personal Training</h1>
+        <p class="lead">
+          Transform your body and mindset with personalized fitness coaching.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section container">
+      <h2 class="text-center mb-5">Why Choose Our Personal Training?</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-goal.png' %}"
+              alt="Goal Planning"
+              class="icon-img"
+            />
+            <h5>Custom Goal Planning</h5>
+            <p>
+              We tailor every workout and meal suggestion based on your
+              goals—fat loss, strength, rehab, or endurance.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-coach.png' %}"
+              alt="Certified Coaches"
+              class="icon-img"
+            />
+            <h5>Expert Coaches</h5>
+            <p>
+              Train with nationally certified personal trainers who know how to
+              motivate and measure results safely.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-flex.png' %}"
+              alt="Flexible Times"
+              class="icon-img"
+            />
+            <h5>Flexible Scheduling</h5>
+            <p>
+              Train when it suits you. We offer morning, evening, and weekend
+              time slots both in-gym and virtually.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container">
+        <h2>Proven Results</h2>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <h3>500+</h3>
+            <p>Personal Training Clients Helped</p>
+          </div>
+          <div class="col-md-4">
+            <h3>90%</h3>
+            <p>Achieve Their Fitness Goals in 12 Weeks</p>
+          </div>
+          <div class="col-md-4">
+            <h3>4.9 ★</h3>
+            <p>Trainer Satisfaction Score</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <h2>Start Your Fitness Journey Today</h2>
+        <p class="lead">
+          Book a free consultation and get a customized fitness plan from our
+          top trainers.
+        </p>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3"
+          >Book Free Session</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Powerfit Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Group Fitness Classes | Powerfit Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f2fefc;
+      }
+      .hero {
+        background: url("{% static 'images/group-fitness-hero.jpg' %}") center
+          center/cover no-repeat;
+        height: 80vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .feature-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+      }
+      .icon-img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+      .stats {
+        background: #009688;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .cta {
+        background: #00675b;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .btn-primary {
+        background-color: #00bfa5;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #009e86;
+      }
+      footer {
+        background-color: #00332f;
+        color: #ccc;
+        padding: 30px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="#">Powerfit Gym</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cardioStrengthZone' %}"
+              >CardioStrengthZone</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="display-3">Group Fitness Classes</h1>
+        <p class="lead">Train together. Sweat together. Achieve together.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section container">
+      <h2 class="text-center mb-5">Classes That Keep You Moving</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-energy.png' %}"
+              alt="High Energy"
+              class="icon-img"
+            />
+            <h5>High-Energy Workouts</h5>
+            <p>
+              Our classes are designed to burn fat, build muscle, and boost
+              cardio in a fun, supportive atmosphere.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-community.png' %}"
+              alt="Community Driven"
+              class="icon-img"
+            />
+            <h5>Community-Driven</h5>
+            <p>
+              You're never alone. Stay motivated and inspired by working out
+              alongside other passionate members.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-card">
+            <img
+              src="{% static 'images/icon-variety.png' %}"
+              alt="Variety"
+              class="icon-img"
+            />
+            <h5>Something for Everyone</h5>
+            <p>
+              Choose from HIIT, Zumba, Strength Circuit, Yoga, Spin, and
+              more—morning to evening.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container">
+        <h2>Our Group Class Impact</h2>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <h3>1000+</h3>
+            <p>Group Classes Per Month</p>
+          </div>
+          <div class="col-md-4">
+            <h3>85%</h3>
+            <p>Members Prefer Group Training</p>
+          </div>
+          <div class="col-md-4">
+            <h3>20+</h3>
+            <p>Certified Group Instructors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <h2>Find Your Fitness Tribe</h2>
+        <p class="lead">
+          Join a class today and turn energy into transformation.
+        </p>
+        <a href="{% url 'classpricing' %}" class="btn btn-primary btn-lg mt-3"
+          >View Class Schedule</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Powerfit Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
